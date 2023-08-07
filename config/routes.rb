@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'budget/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   root "budget#index"
+
+  resources :categories, only: [:index, :new]
+
+  resources :categories, only: [] do
+    resources :transaction_budgets, only: [:index, :new, :create]
+  end
+
 end

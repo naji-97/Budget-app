@@ -1,0 +1,13 @@
+<%= form_with(model: [@category, @transaction], url: category_transaction_budgets_path(@category), local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :amount %>
+  <%= form.number_field :amount %>
+
+  <%= form.label :categories %>
+  <%= form.collection_select :category_ids, current_user.categories, :id, :name, multiple: true %>
+
+  <%= form.submit 'Create Transaction' %>
+<% end %>
+<%= link_to "Back", category_transactions_path(@category) %>

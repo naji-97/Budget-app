@@ -1,0 +1,10 @@
+<%= form_with(model: @category, url: categories_path, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :icon %>
+  <%= form.file_field :icon %>
+
+  <%= form.submit 'Create Category' %>
+<% end %>
+<%= link_to "Back", categories_path %>
