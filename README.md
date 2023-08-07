@@ -98,8 +98,8 @@ rails server
 
 👤 **Naji Ali**
 
-- GitHub: [@Yacos](https://github.com/naji-97/)
-- LinkedIn: [@Yacos](https://linkedin.com/in/abdennaji)
+- GitHub: [@Naji-97](https://github.com/naji-97/)
+- LinkedIn: [@Naji](https://linkedin.com/in/abdennaji)
 
 
 ## 🔭 Future Features <a name="future-features"></a>
