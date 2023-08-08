@@ -5,8 +5,9 @@
       <%= category.name %>
       Icon: <%= image_tag category.icon if category.icon.attached? %>
       Total Amount: <%= category.transaction_budgets.sum(:amount) %>
-      <%= link_to "View Transactions", category_transactions_path(category) %>
+      <%= link_to "View Transactions", category_transaction_budgets_path(category) %>
     </li>
   <% end %>
 </ul>
-<%= link_to "Add a new category", new_category_path %>
+<%= link_to "Add a new transaction", new_category_transaction_budget_path, class: "btn btn-primary" %>
+<%= link_to "Back", categories_path %>

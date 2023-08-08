@@ -6,6 +6,10 @@ class CategoriesController < ApplicationController
     @categories = current_user.categories
   end
 
+  def new
+    @category = current_user.categories.new
+  end
+
   def create
     @category = current_user.categories.new(category_params)
     if @category.save
@@ -13,6 +17,12 @@ class CategoriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:name, :icon)
   end
 
 end

@@ -7,6 +7,8 @@ class TransactionBudgetsController < ApplicationController
     @total_amount = @category.transaction_budgets.sum(:amount)
   end
 
+  def new
+  end
 
   def create
     @category = current_user.categories.find(params[:category_id])
@@ -16,6 +18,12 @@ class TransactionBudgetsController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def transaction_params
+    params.require(:transaction_budget).permit(:name, :amount)
   end
 
 end
