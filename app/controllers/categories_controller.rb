@@ -3,19 +3,24 @@ class CategoriesController < ApplicationController
 
 
   def index
-    @categories = current_user.categories
+    @categories = Category.includes(:author).where(author: current_user)
+    # @category = Category.new
+  end
+
+  def show
+    # @category = Category.find(params[:id])
   end
 
   def new
-    @category = current_user.categories.new
+    @category = Category.new
   end
 
   def create
-    @category = current_user.categories.new(category_params)
+    @category = Category.create(category_params.merge(author: current_user))
     if @category.save
       redirect_to categories_path, notice: 'Category created successfully.'
     else
-      render :new
+      render :new, alert: 'An error occured while creating a new category'
     end
   end
 
