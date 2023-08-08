@@ -1,0 +1,23 @@
+<section class='category-list'>
+  <% if @categories.empty? %>
+    <h2 class='empty'> There is no category yet! </h2>
+  <% else %>
+    <ul class='category-list'>
+      <% @categories.each do |category| %>
+        <li>
+          <%= link_to category_transaction_budgets_path(category), class: 'cat-link' do %>
+            Icon: <%= image_tag category.icon if category.icon.attached? %>
+            <div class='cat-info'>
+              <h2><%= category.name %></h2>
+              <small>Total amount: <%= category.transaction_budgets.sum(:amount) %> $</small>
+            </div>
+          <% end %>
+          <%= link_to 'Add a new transaction', new_category_transaction_budget_path(category), class: 'btn btn-primary' %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= link_to '+ New Category', new_category_path, class: 'btn' %>
+  <%= link_to 'Back', categories_path %>
+</section>
