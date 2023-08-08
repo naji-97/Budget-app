@@ -7,10 +7,12 @@
     <% end %>
     </ul>
   </div>
+
+  cc
 <% end %>
 
 <section class='form'>
-    <%= form_with model:@transaction, url:category_transaction_budgets_path(@category), method: :post do |f| %>
+    <%= form_with model:@transaction, url:category_transaction_budgets_path(@category), method: :post, local: true, data: {turbo: false } do |f| %>
         <div class='form-group'>
             <%= f.label :name%>
             <%= f.text_field :name, placeholder: 'Transaction name', autocomplete: 'off' %>

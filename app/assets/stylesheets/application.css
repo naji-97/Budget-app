@@ -14,56 +14,56 @@
  *= require_self
  */
 
- /* app/assets/stylesheets/custom.css */
+/* app/assets/stylesheets/custom.css */
 
 /* Global styles */
 body {
- font-family: Arial, sans-serif;
- background-color: #f7f7f7;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
 }
 
 /* Header styles */
 header {
- background-color: #333;
- color: #fff;
- padding: 10px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
 }
 
 /* Category list styles */
 ul.category-list {
- list-style: none;
- padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 ul.category-list li {
- margin-bottom: 10px;
- padding: 10px;
- background-color: #fff;
- border: 1px solid #ccc;
- border-radius: 5px;
- box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 ul.category-list li h2 {
- font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 /* Button styles */
 .btn {
- display: inline-block;
- padding: 8px 16px;
- background-color: #007bff;
- color: #fff;
- text-decoration: none;
- border-radius: 5px;
- transition: background-color 0.3s;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
- background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-img{
- width: 50px;
- height: 50px;
+img {
+  width: 50px;
+  height: 50px;
 }

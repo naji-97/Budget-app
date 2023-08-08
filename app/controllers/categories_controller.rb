@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
-
   def index
     @categories = Category.includes(:author).where(author: current_user)
     # @category = Category.new
@@ -29,5 +28,4 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name, :icon)
   end
-
 end
