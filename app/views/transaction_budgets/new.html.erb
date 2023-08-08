@@ -1,13 +1,21 @@
-<%= form_for [@category, @transaction] do |form| %>
+<%= form_for [@category, @transaction], url: category_transaction_budgets_path(@category), local: true, data: { turbo: false } do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
+  <% if @transaction.errors[:name].any? %>
+    <div class="error">
+      <%= @transaction.errors[:name].join(', ') %>
+    </div>
+  <% end %>
 
   <%= form.label :amount %>
   <%= form.number_field :amount %>
-
-  <%= form.label :categories %>
-  <%= form.collection_select :category_ids, current_user.categories, :id, :name, multiple: true %>
+  <% if @transaction.errors[:amount].any? %>
+    <div class="error">
+      <%= @transaction.errors[:amount].join(', ') %>
+    </div>
+  <% end %>
 
   <%= form.submit 'Create Transaction' %>
 <% end %>
-<%= link_to "Back", category_transactions_path(@category) %>
+
+<%= link_to 'Back', category_transaction_budgets_path(@category), class: 'btn' %>

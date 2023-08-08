@@ -5,5 +5,6 @@ Total Amount: <%= @total_amount %>
     <li><%= transaction.name %> - Amount: <%= transaction.amount %></li>
   <% end %>
 </ul>
-<%= link_to "Add a new transaction", new_category_transaction_path(@category) %>
+<%= link_to "Add a new transaction", new_category_transaction_budget_path(@category), class: 'btn btn-primary' %>
+
 <%= link_to "Back", categories_path %>
