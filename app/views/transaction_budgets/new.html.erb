@@ -1,21 +1,38 @@
-<%= form_for [@category, @transaction], url: category_transaction_budgets_path(@category), local: true, data: { turbo: false } do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <% if @transaction.errors[:name].any? %>
-    <div class="error">
-      <%= @transaction.errors[:name].join(', ') %>
-    </div>
-  <% end %>
-
-  <%= form.label :amount %>
-  <%= form.number_field :amount %>
-  <% if @transaction.errors[:amount].any? %>
-    <div class="error">
-      <%= @transaction.errors[:amount].join(', ') %>
-    </div>
-  <% end %>
-
-  <%= form.submit 'Create Transaction' %>
+<% if @transaction.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+    <ul>
+    <% @transaction.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>
 
-<%= link_to 'Back', category_transaction_budgets_path(@category), class: 'btn' %>
+<section class='form'>
+    <%= form_with model:@transaction, url:category_transaction_budgets_path(@category), method: :post do |f| %>
+        <div class='form-group'>
+            <%= f.label :name%>
+            <%= f.text_field :name, placeholder: 'Transaction name', autocomplete: 'off' %>
+        </div>
+
+        <div class='form-group'>
+            <%= f.label :amount%>
+            <%= f.number_field :amount, placeholder: '0.00 $', autocomplete:'amount' %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :category_ids, 'Category'%>
+            <%= f.collection_check_boxes :category_ids, Category.includes(:author).where(author: current_user), :id, :name  do |b| %>
+                <% checked = b.text == @category.name %>
+                <%= b.label { b.check_box(checked: checked) + b.text } %>
+            <% end %>
+        </div>
+
+        <%= f.hidden_field :category_id, value: @category.id %>
+
+        <div class="actions">
+            <%= f.submit "Submit", class:'log-btn'%>
+        </div>
+    <% end %>
+</section>

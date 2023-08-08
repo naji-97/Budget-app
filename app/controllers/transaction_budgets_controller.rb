@@ -1,33 +1,42 @@
 class TransactionBudgetsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_category, only: %i[index new create]
 
   def index
-    @category = current_user.categories.find(params[:category_id])
     @transactions = @category.transaction_budgets.order(created_at: :desc)
-    @total_amount = @category.transaction_budgets.sum(:amount)
+    @total_amount = @transactions.sum(:amount)
   end
 
   def new
-    @category = Category.find(params[:category_id])
-    @transaction = @category.transaction_budgets.new
+    @transaction = TransactionBudget.new
   end
 
   def create
-    @category = current_user.categories.find(params[:category_id])
-    @transaction = @category.transaction_budgets.new(transaction_params)
+    @transaction = TransactionBudget.new(transaction_budget_params.merge(author: current_user))
 
     if @transaction.save
-      redirect_to category_transaction_budgets_path(@category), notice: 'Transaction created successfully.'
+      category_ids = params[:transaction_budget][:category_ids]
+
+      if category_ids.present?
+        category_ids.each do |category_id|
+          category = Category.find_by(id: category_id)
+          category.transaction_budgets << @transaction if category.present?
+        end
+      end
+
+      redirect_to category_transaction_budgets_path(@category), notice: 'Transaction was successfully created.'
     else
-      render 'new'
+      render :new, alert: "Transaction wasn't created."
     end
   end
 
-
   private
 
-  def transaction_params
-    params.require(:transaction_budget).permit(:name, :amount, :category_id, category_ids: [])
+  def find_category
+    @category = Category.includes(:author).find_by(id: params[:category_id])
   end
 
+  def transaction_budget_params
+    params.require(:transaction_budget).permit(:name, :amount)
+  end
 end
