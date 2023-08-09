@@ -1,6 +1,6 @@
 <% if @transaction.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@transaction.errors.count, "error") prohibited this transaction from being saved:</h2> %>
+    <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
     <ul>
     <% @transaction.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -12,29 +12,33 @@
 <% end %>
 
 <section class='form'>
-    <%= form_with model:@transaction, url:category_transaction_budgets_path(@category), method: :post, local: true, data: {turbo: false } do |f| %>
-        <div class='form-group'>
-            <%= f.label :name%>
+    <%= form_with model:@transaction, url:category_transaction_budgets_path(@category), method: :post, local: true do |f| %>
+        <div class='field'>
+
             <%= f.text_field :name, placeholder: 'Transaction name', autocomplete: 'off' %>
         </div>
 
-        <div class='form-group'>
-            <%= f.label :amount%>
+        <div class='field'>
+
             <%= f.number_field :amount, placeholder: '0.00 $', autocomplete:'amount' %>
         </div>
 
-        <div class="form-group">
-            <%= f.label :category_ids, 'Category'%>
+        <div class="field choose-category">
+            <%= f.label :category_ids, 'choose category:', class:'label-cate'%>
             <%= f.collection_check_boxes :category_ids, Category.includes(:author).where(author: current_user), :id, :name  do |b| %>
                 <% checked = b.text == @category.name %>
-                <%= b.label { b.check_box(checked: checked) + b.text } %>
+                <p><%= b.label { b.check_box(checked: checked) + b.text } %></p>
             <% end %>
         </div>
 
         <%= f.hidden_field :category_id, value: @category.id %>
 
         <div class="actions">
-            <%= f.submit "Submit", class:'log-btn'%>
+            <%= f.submit "Submit", class: "btn-create"%>
         </div>
     <% end %>
+     <div class="field">
+        
+        <%= link_to "Back", categories_path, class:'back'%>
+     </div>
 </section>

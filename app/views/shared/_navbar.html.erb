@@ -3,7 +3,7 @@
     <% if controller_name == 'categories' && action_name == 'index' %>
         <p><i class="fa-solid fa-bars"></i></p>
        <p>Categories</p>
-       <p><i class="fa-solid fa-magnifying-glass"></i></p>
+       <p> <small><%= link_to "SIGN OUT",  destroy_user_session_path, data: {turbo_method: :delete }, class: "btn-signout" %></small></p>
 
 
 
@@ -27,7 +27,7 @@
         <% end %>
        </p>
        <p>Details</p>
-       <p></p>
+           <p> <small><%= link_to "SIGN OUT",  destroy_user_session_path, data: {turbo_method: :delete }, class: "btn-signout" %></small></p>
     <% end %>
   </div>
 </nav>
