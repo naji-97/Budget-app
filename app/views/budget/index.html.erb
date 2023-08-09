@@ -1,17 +1,21 @@
 <div class="section">
 
- <h1>Budget</h1>
- </div>
- <div class="links">
+ <h1 class="app-name">Budget</h1>
+  <div class="links-group">
 
-  <% if user_signed_in? %>
-    <%= link_to "SIGN OUT",  destroy_user_session_path, data: {turbo_method: :delete }, class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+      <div class="links signout">
+      <%= link_to "SIGN OUT",  destroy_user_session_path, data: {turbo_method: :delete }, class: "btn-signout" %>
+      </div>
+      <% else %>
+      <div class="links">
+      <%= link_to "LOG IN", new_user_session_path, class: "btn-login" %> <br>
+      <%= link_to "SIGN UP ", new_user_registration_path, class: "btn-signup" %>
+      </div>
+    <% end %>
 
-    <% else %>
-    <%= link_to "LOG IN", new_user_session_path, class: "btn btn-primary" %> <br>
-    <%= link_to "SIGN UP ", new_user_registration_path, class: "btn btn-primary" %>
-  <% end %>
+  </div>
 
-
- </div>
 </div>
+
+

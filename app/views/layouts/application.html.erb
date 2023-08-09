@@ -8,13 +8,24 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
      <%= stylesheet_link_tag 'application', media: 'all' %>
+     <%= stylesheet_link_tag 'mobile_styles' %>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <%= javascript_importmap_tags %>
-    
+
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="messages">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+    <%= render 'shared/navbar' %>
+    <div class="container">
+      <div class="body-content">
+
+
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>
