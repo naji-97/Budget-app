@@ -1,10 +1,20 @@
-<h1>Transactions for <%= @category.name %></h1>
-Total Amount: <%= @total_amount %>
+<div class="transaction-details">
+   <h3> Total Payment: <%= @total_amount %>$</h3>
+  <div class="transaction">
+  <%= image_tag @category.icon if @category.icon.attached? %>
+  <h3>
+   <%= @category.name %>
+  </h3>
+
+ </div>
 <ul>
   <% @transactions.each do |transaction| %>
-    <li><%= transaction.name %> - Amount: <%= transaction.amount %></li>
+    <li><%= transaction.name %> <small> <%= transaction.amount %>$</small></li>
   <% end %>
 </ul>
-<%= link_to "Add a new transaction", new_category_transaction_budget_path(@category), class: 'btn btn-primary' %>
 
-<%= link_to "Back", categories_path %>
+</div>
+
+<div class="links new-transaction">
+  <%= link_to "Add a new transaction", new_category_transaction_budget_path(@category), class: "btn-create" %>
+</div>

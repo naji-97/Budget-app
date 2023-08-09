@@ -1,10 +1,16 @@
 <%= form_with(model: @category, url: categories_path) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+  <div class="field">
+    <%= form.text_field :name, placeholder: 'Category Name'%>
+  </div>
 
-  <%= form.label :icon %>
-  <%= form.file_field :icon %>
-
-  <%= form.submit 'Create Category' %>
+  <div class="field">
+    <%= form.file_field :icon, placeholder:"Choose Icon" %>
+  </div>
+  <div class="actions">
+  <%= form.submit 'Create Category', class: "btn-create" %>
+  </div>
 <% end %>
-<%= link_to "Back", categories_path %>
+
+  <div class="field">
+    <%= link_to "Back", categories_path, class:'back'%>
+  </div>

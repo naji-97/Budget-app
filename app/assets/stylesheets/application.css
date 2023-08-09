@@ -1,32 +1,54 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 
-/* app/assets/stylesheets/custom.css */
-
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
+@font-face {
+  font-family: 'proxima_nova_rgregular';
+  src: url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot');
+  src:
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.woff') format('woff'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.ttf') format('truetype'),
+    url('https://litmus.com/fonts/Emails/proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Header styles */
+@font-face {
+  font-family: 'proxima_nova_rgbold';
+  src: url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot');
+  src:
+    url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.woff') format('woff'),
+    url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.ttf') format('truetype'),
+    url('https://litmus.com/fonts/Emails/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Proxima Nova', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 header {
   background-color: #333;
   color: #fff;
   padding: 10px;
+}
+
+:root {
+  --main-color: #3778c2;
+  --sec-color: #5fb523;
+  --text-color: #434b54;
+  --title-fonts: 'Proxima Nova Bold', sans-serif;
+  --text-family: 'Proxima Nova Light', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'proxima_nova_rgbold', Helvetica, Arial, sans-serif;
+  color: #333; /* Your headline color */
 }
 
 /* Category list styles */
@@ -35,35 +57,239 @@ ul.category-list {
   padding: 0;
 }
 
-ul.category-list li {
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 ul.category-list li h2 {
   font-size: 1.2em;
-}
-
-/* Button styles */
-.btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #0056b3;
 }
 
 img {
   width: 50px;
   height: 50px;
+}
+
+body {
+  font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  align-items: center;
+  display: grid;
+  place-items: center;
+  background-color: whitesmoke;
+}
+
+p {
+  font-size: 20px;
+}
+
+.container {
+  max-width: 400px;
+  width: 375px;
+  display: flex;
+
+  /* justify-content: center; */
+  flex-direction: column;
+  background-color: #fff;
+  height: 100vh;
+}
+
+p,
+a,
+li {
+  font-family: 'proxima_nova_rgregular', Helvetica, Arial, sans-serif;
+  color: #666; /* Your general text color */
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: var(--main-color);
+  max-width: 400px;
+  width: 375px;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  padding: 10px;
+}
+
+.navbar-content p,
+.navbar-content p i {
+  color: #fff;
+}
+
+/* Add more global mobile styles as needed */
+.section {
+  display: grid;
+  grid-template-rows: 85% 10%;
+  justify-items: center;
+  align-content: space-between;
+  gap: 20px;
+}
+
+.links {
+  width: 300px;
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 35%;
+}
+
+.links a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 0;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.transaction-details {
+  padding: 10px;
+}
+
+.transaction-details h3 {
+  text-align: center;
+}
+
+.transaction-details ul {
+  padding: 5px 20px;
+}
+
+.transaction-details ul li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.label-cate {
+  display: block;
+  text-align: center;
+  color: red;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.notice {
+  text-align: center;
+  background-color: green;
+  width: 375px;
+  color: #fff;
+}
+
+.alert {
+  text-align: center;
+  background-color: red;
+  width: 375px;
+  color: #fff;
+}
+
+#error_explanation,
+#error_explanation small {
+  color: red;
+}
+
+.app-name {
+  margin-top: 100px;
+}
+
+.btn-login,
+.btn-signout {
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+.actions .btn-login {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.btn-create {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  display: block;
+  color: #fff;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background-color: var(--sec-color);
+}
+
+.new-transaction {
+  margin: 0;
+}
+
+.back {
+  text-align: center;
+  display: block;
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  background-color: #3778c2;
+  color: #fff;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px;
+
+  /* border-radius: 4px; */
+  border: none;
+  border-bottom: 0.1px solid;
+}
+
+.devise {
+  text-align: center;
+  text-decoration: none;
+}
+
+.signout {
+  margin-top: 70px;
+}
+
+.category {
+  margin: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  padding: 5px;
+}
+
+.category .cat-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.btn-new-cat {
+  position: absolute;
+  bottom: 0;
+  background: #8bc34a;
+  width: 360px;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 0;
+  margin: 10px 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.date {
+  padding: 0 50px 12px 100px;
 }
