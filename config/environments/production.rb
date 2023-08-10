@@ -5,7 +5,7 @@ require 'active_support/core_ext/integer/time'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # Set the default host for email URLs to your Render app domain
-  # config.action_mailer.default_url_options = { host: 'budegt-api2.onrender.com' }
+  config.action_mailer.default_url_options = { host: 'budegt-api2.onrender.com' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
