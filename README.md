@@ -98,13 +98,13 @@ rails server
 
 ### Deployment
 
-[Deployment_link](https://kondona.onrender.com/)
+[Deployment_link](https://budegt-03u4.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ##  Video-Presentation <a id="video"></a>
 
-You can view a video presentation of this app [here](https://drive.google.com/file/d/1UhhlcjtkhJfvGWW3t1Q0h4laePp4yZrM/view?usp=sharing)
+You can view a video presentation of this app [here](https://www.loom.com/share/04619fe9257841359b204e47b5564b5b?sid=b3db11e5-0242-4521-b516-0dc2ee41eb94)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -142,11 +142,13 @@ If you like this project, give it a ⭐.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for giving me this wonderful opportunity to work on this project.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+I would like to thank Microverse for giving me this wonderful opportunity to work on this project
+and [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) for the original design.
+<p align="right">(<a href="#readme-top">back to top</a>)</p><p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+****
