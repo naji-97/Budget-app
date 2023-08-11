@@ -15,6 +15,8 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
+    - [Deployment](#deployment)
+  - [Video-Presentation ](#video-presentation-)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -91,6 +93,19 @@ Start the server by running the following command:
 ```sh
 rails server
 ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Deployment
+
+[Deployment_link](https://kondona.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+##  Video-Presentation <a id="video"></a>
+
+You can view a video presentation of this app [here](https://drive.google.com/file/d/1UhhlcjtkhJfvGWW3t1Q0h4laePp4yZrM/view?usp=sharing)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
