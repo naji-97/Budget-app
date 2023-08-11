@@ -104,7 +104,7 @@ rails server
 
 ##  Video-Presentation <a id="video"></a>
 
-You can view a video presentation of this app [here](https://www.loom.com/share/0e48e2f533f049c38b37c1d6daed3a5a?sid=68e84e2e-75a4-45c5-a9a3-b289ee233579)
+You can view a video presentation of this app [here](https://www.loom.com/share/04619fe9257841359b204e47b5564b5b?sid=20ed6bc3-3221-453c-bd38-da9569e5ae2d)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -151,3 +151,4 @@ and [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) for the o
 This project is [MIT](/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+****
