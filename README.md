@@ -142,8 +142,9 @@ If you like this project, give it a ⭐.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for giving me this wonderful opportunity to work on this project.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+I would like to thank Microverse for giving me this wonderful opportunity to work on this project
+and [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) for the original design.
+<p align="right">(<a href="#readme-top">back to top</a>)</p><p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
 
