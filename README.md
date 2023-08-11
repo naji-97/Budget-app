@@ -98,13 +98,13 @@ rails server
 
 ### Deployment
 
-[Deployment_link](https://kondona.onrender.com/)
+[Deployment_link](https://budegt-03u4.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ##  Video-Presentation <a id="video"></a>
 
-You can view a video presentation of this app [here](https://drive.google.com/file/d/1UhhlcjtkhJfvGWW3t1Q0h4laePp4yZrM/view?usp=sharing)
+You can view a video presentation of this app [here](https://www.loom.com/share/0e48e2f533f049c38b37c1d6daed3a5a?sid=68e84e2e-75a4-45c5-a9a3-b289ee233579)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
